@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <head>
+		<title>WebSocket</title>
+    </head>
+	<body>
+	    <script>
+		    var onOpen = function(event){
+			    console.log('Socket opened. readyState:'+socket.readyState);
+				
+				//socket.send('Hi, Server!');
+				var msg = {
+				    type: "message",
+					text: "something",
+					id: "number",
+					data: Date.now()
+				};
+				socket.send(JSON.stringify(msg));
+			};
+			var onClose = function(event){
+			    console.log('Socket closed.readyState:'+socket.readyState);
+				console.log('Connected to: ' + event.currentTarget.url);
+			};
+			var onMessage = function(data){
+			    console.log("We get signal:");
+				console.log(data);
+			};
+			var onError = function(event){
+			    console.log("We got an error.: " + event.data);
+			};
+			var socket = new WebSocket('ws://127.0.0.1:8080/');
+			socket.onopen = onOpen;
+			socket.onclose = onClose;
+			socket.onerror = onError;
+			socket.onmessage = onMessage;
+		</script>	
+	</body>
+</html>
+
