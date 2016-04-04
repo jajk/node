@@ -6,10 +6,10 @@
 	    <script src="./socket.io.js"></script>	
 		<script>
 		    var socket = io.connect('http://localhost');
-			socket.on('news', function(data){
-			    console.log(data);
-			});
-			socket.emit('anotherNews');
+		    socket.on('news', function(data){
+			console.log(data);
+		    });
+		    socket.emit('anotherNews');
 		</script>
 	</body>
 </html>
