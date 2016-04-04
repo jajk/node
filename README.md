@@ -1,2 +1,2 @@
-# nodeJS
-study the nodeJS
+# node
+study the node
