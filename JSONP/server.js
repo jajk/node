@@ -21,8 +21,8 @@ server.on('request',function(req, res){
 		res.end(callback);
 	}
 	else{
-	    res.writeHead(200, {'Content-Type':'text/html;charset=utf-8'});
-        res.end('Hell World\n');	
+	    	res.writeHead(200, {'Content-Type':'text/html;charset=utf-8'});
+            	res.end('Hell World\n');	
 	}    
 });
 //监听8080端口
